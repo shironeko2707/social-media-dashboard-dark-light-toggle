@@ -7,9 +7,15 @@ const cssnano = require('cssnano');
 const babel = require('gulp-babel');
 const terser = require('gulp-terser');
 const browsersync = require('browser-sync').create();
+const deploy      = require('gulp-gh-pages');
 
-// Use dart-sass for @use
-//sass.compiler = require('dart-sass');
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
+});
 
 // Sass Task
 function scssTask() {
