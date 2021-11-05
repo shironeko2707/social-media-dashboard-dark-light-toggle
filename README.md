@@ -9,8 +9,8 @@
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/shironeko2707/social-media-dashboard-dark-light-toggle.git]
+- Live Site URL: [https://social-media-dashboard-dark-light-toggle.vercel.app]
 
 ## My process
 

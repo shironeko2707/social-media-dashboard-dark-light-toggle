@@ -1,5 +1,5 @@
 // Initialize modules
-const { src, dest, watch, series } = require('gulp');
+const { src, dest, watch, series , task} = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -7,16 +7,9 @@ const cssnano = require('cssnano');
 const babel = require('gulp-babel');
 const terser = require('gulp-terser');
 const browsersync = require('browser-sync').create();
-const deploy      = require('gulp-gh-pages');
+const ghPages = require('gulp-gh-pages');
 
-/**
- * Push build to gh-pages
- */
-gulp.task('deploy', function () {
-  return gulp.src("./dist/**/*")
-    .pipe(deploy())
-});
-
+task('deploy', () => src('./dist/**/*').pipe(ghPages()));
 // Sass Task
 function scssTask() {
   return src('app/scss/style.scss', { sourcemaps: true })
